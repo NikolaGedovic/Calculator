@@ -38,7 +38,7 @@
   gap: 2px;
   grid-template-areas:
     "screen screen screen screen"
-    "clear sign percent divide"
+    "clear-all clear percent divide"
     "number-7 number-8 number-9 multiply"
     "number-4 number-5 number-6 minus"
     "number-1 number-2 number-3 plus"
@@ -58,8 +58,8 @@
   padding-right: 1rem;
 }
 
-.clear {
-  grid-area: clear;
+.clear-all {
+  grid-area: clear-all;
   background-color: var(--operator-top-color);
   cursor: pointer;
   border: 2px solid black;
@@ -67,8 +67,8 @@
   font-size: 1.8rem;
 }
 
-.sign {
-  grid-area: sign;
+.clear {
+  grid-area: clear;
   background-color: var(--operator-top-color);
   cursor: pointer;
   border: 2px solid black;
@@ -229,8 +229,8 @@
   font-size: 1.8rem;
 }
 
+.clear-all:active,
 .clear:active,
-.sign:active,
 .percent:active {
   background-color: var(--operator-top-active-color);
 }
