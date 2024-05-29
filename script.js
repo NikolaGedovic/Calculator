@@ -20,6 +20,8 @@ const number0 = document.querySelector(".number-0");
 const dot = document.querySelector(".dot");
 const equals = document.querySelector(".equals");
 
+
+
 // Operation Functions
 function plusOperation(num1, num2) {
   return num1 + num2;
@@ -36,3 +38,28 @@ function multiplyOperation(num1, num2) {
 function divideOperation(num1, num2) {
   return num1 / num2;
 };
+
+
+// Update Screen
+function updateScreen(value) {
+  if (screen.textContent === "0") {
+    screen.textContent = value;
+  } else {
+    screen.textContent += value;
+  }
+}
+
+
+// Event listeners for buttons
+number0.addEventListener("click", () => updateScreen("0"));
+number1.addEventListener("click", () => updateScreen("1"));
+number2.addEventListener("click", () => updateScreen("2"));
+number3.addEventListener("click", () => updateScreen("3"));
+number4.addEventListener("click", () => updateScreen("4"));
+number5.addEventListener("click", () => updateScreen("5"));
+number6.addEventListener("click", () => updateScreen("6"));
+number7.addEventListener("click", () => updateScreen("7"));
+number8.addEventListener("click", () => updateScreen("8"));
+number9.addEventListener("click", () => updateScreen("9"));
+
+
