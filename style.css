@@ -38,7 +38,7 @@
   gap: 2px;
   grid-template-areas:
     "screen screen screen screen"
-    "clear-all clear percent divide"
+    "clear-all clear squared divide"
     "number-7 number-8 number-9 multiply"
     "number-4 number-5 number-6 minus"
     "number-1 number-2 number-3 plus"
@@ -76,8 +76,8 @@
   font-size: 1.8rem;
 }
 
-.percent {
-  grid-area: percent;
+.squared {
+  grid-area: squared;
   background-color: var(--operator-top-color);
   cursor: pointer;
   border: 2px solid black;
@@ -231,7 +231,7 @@
 
 .clear-all:active,
 .clear:active,
-.percent:active {
+.squared:active {
   background-color: var(--operator-top-active-color);
 }
 
