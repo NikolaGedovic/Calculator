@@ -70,6 +70,14 @@ number9.addEventListener("click", () => updateScreen("9"));
 
 
 
+// Event listeners for operation buttons
+plus.addEventListener("click", () => handleOperation('+'));
+minus.addEventListener("click", () => handleOperation('-'));
+multiply.addEventListener("click", () => handleOperation('*'));
+divide.addEventListener("click", () => handleOperation('/'));
+
+
+
 // Clear All from Display
 clearAll.addEventListener("click", () => {
   screen.textContent = "0";
