@@ -1,7 +1,7 @@
 // Variables
 const screen = document.querySelector("#screen");
-const clearAll = document.querySelector(".clear");
-const clear = document.querySelector(".clear");
+const clearAll = document.querySelector(".clear-all");
+const clearOne = document.querySelector(".clear");
 const percent = document.querySelector(".percent");
 const divide = document.querySelector(".divide");
 const number7 = document.querySelector(".number-7");
@@ -20,24 +20,29 @@ const number0 = document.querySelector(".number-0");
 const dot = document.querySelector(".dot");
 const equals = document.querySelector(".equals");
 
+let currentInput = "0";
+let previousInput = "";
+let operator = null;
+
 
 
 // Operation Functions
 function plusOperation(num1, num2) {
   return num1 + num2;
-};
+}
 
 function minusOperation(num1, num2) {
   return num1 - num2;
-};
+}
 
 function multiplyOperation(num1, num2) {
   return num1 * num2;
-};
+}
 
 function divideOperation(num1, num2) {
   return num1 / num2;
-};
+}
+
 
 
 // Update Screen
@@ -50,7 +55,8 @@ function updateScreen(value) {
 }
 
 
-// Event listeners for buttons
+
+// Event listeners for number buttons
 number0.addEventListener("click", () => updateScreen("0"));
 number1.addEventListener("click", () => updateScreen("1"));
 number2.addEventListener("click", () => updateScreen("2"));
@@ -63,3 +69,23 @@ number8.addEventListener("click", () => updateScreen("8"));
 number9.addEventListener("click", () => updateScreen("9"));
 
 
+
+// Clear All from Display
+clearAll.addEventListener("click", () => {
+  screen.textContent = "0";
+  currentInput = "0";
+  previousInput = "";
+  operator = null;
+});
+
+
+
+// Clear One character from Display
+clearOne.addEventListener("click", () => {
+  if (screen.textContent.length > 1) {
+    screen.textContent = screen.textContent.slice(0, -1);
+  } else {
+    screen.textContent = "0";
+  }
+  currentInput = screen.textContent;
+});
