@@ -47,9 +47,26 @@ dot.addEventListener("click", () => appendToExpression("."));
 
 // Event listeners for operation buttons
 plus.addEventListener("click", () => appendToExpression('+'));
+
 minus.addEventListener("click", () => appendToExpression('-'));
+
 multiply.addEventListener("click", () => appendToExpression('*'));
+
 divide.addEventListener("click", () => appendToExpression('/'));
+
+squared.addEventListener("click", calculateSquared);
+
+equals.addEventListener("click", () => calculate());
+
+
+
+// Function to calculate the square of the current number on the screen
+function calculateSquared() {
+  const num = parseFloat(screen.textContent);
+  const result = num * num;
+  screen.textContent = result.toString();
+  expression = result.toString();
+}
 
 // Append to Expression
 function appendToExpression(value) {
@@ -128,8 +145,6 @@ function applyOperator(op, b, a) {
   }
 }
 
-// Event listener for equals button
-equals.addEventListener("click", () => calculate());
 
 // Initialize screen with 0
 screen.textContent = "0";
