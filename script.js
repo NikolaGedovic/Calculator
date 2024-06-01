@@ -23,6 +23,8 @@ const equals = document.querySelector(".equals");
 let currentInput = "";
 let expression = "";
 
+
+
 // Update Screen
 function updateScreen(value) {
   if (screen.textContent === "0") {
@@ -31,6 +33,8 @@ function updateScreen(value) {
     screen.textContent += value;
   }
 }
+
+
 
 // Event listeners for number buttons
 number0.addEventListener("click", () => appendToExpression("0"));
@@ -44,6 +48,8 @@ number7.addEventListener("click", () => appendToExpression("7"));
 number8.addEventListener("click", () => appendToExpression("8"));
 number9.addEventListener("click", () => appendToExpression("9"));
 dot.addEventListener("click", () => appendToExpression("."));
+
+
 
 // Event listeners for operation buttons
 plus.addEventListener("click", () => appendToExpression('+'));
@@ -68,6 +74,8 @@ function calculateSquared() {
   expression = result.toString();
 }
 
+
+
 // Append to Expression
 function appendToExpression(value) {
   if (screen.textContent === "0" && value !== '.') {
@@ -77,11 +85,15 @@ function appendToExpression(value) {
   updateScreen(value);
 }
 
+
+
 // Clear All from Display
 clearAll.addEventListener("click", () => {
   screen.textContent = "0";
   expression = "";
 });
+
+
 
 // Clear One character from Display
 clearOne.addEventListener("click", () => {
@@ -94,6 +106,8 @@ clearOne.addEventListener("click", () => {
   }
 });
 
+
+
 // Calculate Result
 function calculate() {
   const result = parseExpression(expression);
@@ -101,6 +115,8 @@ function calculate() {
   screen.textContent = roundedResult.toString();
   expression = roundedResult.toString();
 }
+
+
 
 // Function to parse and evaluate expression
 function parseExpression(expr) {
@@ -127,6 +143,8 @@ function parseExpression(expr) {
 
   return values[0];
 }
+
+
 
 // Helper functions for parsing
 function precedence(op) {
