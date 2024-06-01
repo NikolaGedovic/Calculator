@@ -80,8 +80,9 @@ clearOne.addEventListener("click", () => {
 // Calculate Result
 function calculate() {
   const result = parseExpression(expression);
-  screen.textContent = result.toString();
-  expression = result.toString();
+  const roundedResult = Math.round(result * 100) / 100;
+  screen.textContent = roundedResult.toString();
+  expression = roundedResult.toString();
 }
 
 // Function to parse and evaluate expression
